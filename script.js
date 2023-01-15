@@ -6,7 +6,7 @@ function setup() {
   createCanvas(400, 400);
   background("black");
   paddle_width = 100;
-  brick_width = 130;
+  brick_width = 120;
   paddle_x = (width / 2) - (paddle_width / 2);
   paddle_y = height - 25;
   brick_x = (width / 2) - (brick_width / 2);
