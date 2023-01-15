@@ -1,7 +1,7 @@
 let paddle_x, paddle_y, paddle_width, paddle_height, paddle_dx;
 let brick_x, brick_y, brick_width, brick_height;
 let ball_x, ball_y, ball_diameter, ball_dx, ball_dy;
-let main_text, score;
+let score;
 
 function setup() {
   createCanvas(400, 400);
@@ -10,7 +10,7 @@ function setup() {
   brick_width = 120;
   paddle_x = (width / 2) - (paddle_width / 2);
   paddle_y = height - 25;
-  brick_x = (width / 2) - (brick_width / 2);
+  brick_x = (width / 2) - (brick_width / 2) - 60;
   brick_y = 100;
   paddle_height = 15;
   brick_height = 15;
@@ -22,7 +22,6 @@ function setup() {
   ball_x = (width / 2) - (ball_diameter / 2);
   ball_y = (height / 2) - (ball_diameter / 2);
   
-  main_text = "Point: 0";
   score = 0;
 }
 
@@ -64,7 +63,13 @@ function draw() {
     brick_x = 1000;
     brick_y = 1000;
     ball_dy = -ball_dy;
+    score += 10;
+    text("Score: " + score, 10, 30);
    }
+  
+  textSize(20);
+  text('Score: ' + score, 10, 30);
+  fill(0, 102, 153);
   
   circle(ball_x, ball_y, ball_diameter);
   rect(paddle_x, paddle_y, paddle_width, paddle_height);
